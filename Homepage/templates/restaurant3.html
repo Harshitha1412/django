@@ -1,0 +1,801 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      background-color: #f0f0f0; /* Set background color here */
+
+    }
+
+    #left-container {
+    width: 25%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: white;
+    height: 130vh; /* 130% of the viewport height */
+}
+
+.video-background {
+    max-width: 100%; /* Set maximum width to 130% of its container */
+    max-height: 100%; /* Set maximum height to 130% of its container */
+    width: auto;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+    #right-container {
+      width: 75%;
+      min-height: 130vh;
+      background-color: transparent; /*
+      padding: 20px;
+      box-sizing:border-box;
+    }
+
+    #restaurant-image {
+      width: 130%;
+      height: 70%;
+    }
+
+    .restaurant-info {
+      margin-top: 20px;
+    }
+
+    .stars {
+      color: #FFD700; /* Gold color for stars */
+    }
+
+    .menu-container {
+      background-color: #fff;
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+
+    }
+
+    .menu-title {
+      font-family: 'Style Script', cursive;
+      font-size: 30px;
+      margin-bottom: 10px;
+      width: 130%;
+      margin-left: 90%;
+    }
+
+
+
+    .menu-category {
+      width: 50%; /* Two categories per row */
+      box-sizing: border-box;
+      padding: 0 10px;
+      margin-bottom: 20px;
+    }
+
+    .menu-item {
+      display: flex;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      margin:10px;
+
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: calc(90% - 10px); /* Adjusted width for menu item containers */
+    }
+
+    .food-image {
+      width: 80%;
+      height: 260px;
+      object-fit: cover;
+    }
+
+    .food-details {
+      padding: 10px;
+      width: 60%;
+    }
+
+    .rating {
+      margin-bottom: 10px;
+    }
+
+    .add-to-cart {
+      background-color: #4caf50;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 60%;
+      margin-top: 10px;
+      margin-left: 10%;
+
+    }
+  </style>
+</head>
+<body>
+
+  <div id="left-container" >
+     <video class="video-background" autoplay loop muted>
+       <source src="/static/cake.mp4" type="video/mp4">
+    </video>
+
+    <div class="restaurant-info">
+      <h1>Vintage Bakery</h1>
+      <p>Hotel Location: Shyam street, Vidya nagar, Guntur , India</p>
+      <p>Opening Hours: 10:00 AM - 8:00 PM (Monday-Sunday)</p>
+      <!-- Add other restaurant information as needed -->
+    </div>
+  </div>
+
+
+  <div id="right-container">
+      <div class="menu-container">
+      <div class="menu-category">
+        <h2 class="menu-title">Cupcakes</h2>
+
+        <!-- Desserts - Food Item 1 -->
+        <div class="menu-item">
+          <img src="/static/butterscotch_cupcakes.jpg" alt="pizza 1" class="food-image">
+
+          <div class="food-details">
+            <h3>Butterscotch Cupcakes</h3>
+            <p>Price: 50/-</p>
+            <div class="rating">
+      <p>Rating: <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span></p>
+    </div>
+    <label for="cupcake1">Quantity:</label>
+    <div class="quantity-selector">
+      <button class="quantity-btn" onclick="changeQuantity('-','cupcake1')">-</button>
+      <input type="number" id="cupcake1" value="1" min="1" max="6">
+      <button class="quantity-btn" onclick="changeQuantity('+','cupcake1')">+</button>
+    </div>
+           <button id="addToCartBtncupcake1" onclick="addToCart('Butterscotch Cupcakes',50, 'cupcake1','/static/butterscotch_cupcakes.jpg','Vintage Bakery')" class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+
+      </div>
+
+
+
+ <div class="menu-category">
+
+        <h2 class="menu-title">
+
+
+        &nbsp</h2>
+
+        <div class="menu-item">
+          <img src="/static/chocolate_cupcake.jpg" alt="cake" class="food-image">
+          <div class="food-details">
+            <h3>Chocolate Cupcakes</h3>
+            <p>Price: 60/-</p>
+            <div class="rating">
+      <p>Rating: <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span></p>
+    </div>
+    <label for="cupcake2">Quantity:</label>
+    <div class="quantity-selector">
+      <button class="quantity-btn" onclick="changeQuantity('-','cupcake2')">-</button>
+      <input type="number" id="cupcake2" value="1" min="1" max="6">
+      <button class="quantity-btn" onclick="changeQuantity('+','cupcake2')">+</button>
+    </div>
+             <button id="addToCartBtncupcake2" onclick="addToCart('Chocolate Cupcakes',60, 'cupcake2','/static/chocolate_cupcake.jpg','Vintage Bakery')" class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+
+   </div>
+
+ <div class="menu-category">
+     &nbsp
+        <div class="menu-item">
+
+          <img src="/static/ferrero_cupcake.jpg" alt="pizza 1" class="food-image" style="width:200px; height:260px;">
+
+          <div class="food-details">
+            <h3>Ferrero Rocher Cupcakes</h3>
+            <p>Price: 150/-</p>
+            <div class="rating">
+      <p>Rating: <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span></p>
+    </div>
+    <label for="cupcake3">Quantity:</label>
+    <div class="quantity-selector">
+      <button class="quantity-btn" onclick="changeQuantity('-','cupcake3')">-</button>
+      <input type="number" id="cupcake3" value="1" min="1" max="6">
+      <button class="quantity-btn" onclick="changeQuantity('+','cupcake3')">+</button>
+    </div>
+           <button id="addToCartBtncupcake3" onclick="addToCart('Ferrero Rocher Cupcakes',150, 'cupcake3','/static/ferrero_cupcake.jpg','Vintage Bakery')" class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+
+      </div>
+      <!-- Left side for Desserts -->
+
+
+ <div class="menu-category">
+
+        <h2 class="menu-title">
+
+</h2>
+        <!-- Desserts - Food Item 2 -->
+        <div class="menu-item">
+          <img src="/static/red_velvet_cupcake.jpg" alt="cake" class="food-image" style="width:200px">
+          <div class="food-details">
+            <h3>Red Velvet Cupcakes</h3>
+            <p>Price: 160/-</p>
+            <div class="rating">
+      <p>Rating: <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span></p>
+    </div>
+    <label for="cupcake4">Quantity:</label>
+    <div class="quantity-selector">
+      <button class="quantity-btn" onclick="changeQuantity('-','cupcake4')">-</button>
+      <input type="number" id="cupcake4" value="1" min="1" max="6">
+      <button class="quantity-btn" onclick="changeQuantity('+','cupcake4')">+</button>
+    </div>
+             <button id="addToCartBtncupcake4" onclick="addToCart('Red Velvet Cupcakes',160, 'cupcake4','/static/red_velvet_cupcake.jpg','Vintage Bakery')" class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+
+   </div>
+
+ <div class="menu-category">
+       &nbsp
+        <div class="menu-item">
+          <img src="/static/berry_cupcake.jpg" alt="pizza 1" class="food-image" style="width:200px; height:260px;">
+
+          <div class="food-details">
+            <h3>Berry Cupcakes</h3>
+            <p>Price: 110/-</p>
+            <div class="rating">
+      <p>Rating: <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span></p>
+    </div>
+    <label for="cupcake5">Quantity:</label>
+    <div class="quantity-selector">
+      <button class="quantity-btn" onclick="changeQuantity('-','cupcake5')">-</button>
+      <input type="number" id="cupcake5" value="1" min="1" max="6">
+      <button class="quantity-btn" onclick="changeQuantity('+','cupcake5')">+</button>
+    </div>
+           <button id="addToCartBtncupcake5" onclick="addToCart('Berry Cupcakes',110, 'cupcake5','/static/berry_cupcake.jpg','Vintage Bakery')" class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+
+      </div>
+      <!-- Left side for Desserts -->
+
+
+ <div class="menu-category">
+
+        <h2 class="menu-title">
+</h2>
+        <!-- Desserts - Food Item 2 -->
+        <div class="menu-item">
+          <img src="/static/whitecupcakes.jpg" alt="cake" class="food-image" style="width:350px; height:260px;">
+          <div class="food-details">
+            <h3>Vanilla Cupcakes</h3>
+            <p>Price: 80/-</p>
+            <div class="rating">
+      <p>Rating: <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span></p>
+    </div>
+    <label for="cupcake6">Quantity:</label>
+    <div class="quantity-selector">
+      <button class="quantity-btn" onclick="changeQuantity('-','cupcake6')">-</button>
+      <input type="number" id="cupcake6" value="1" min="1" max="6">
+      <button class="quantity-btn" onclick="changeQuantity('+','cupcake6')">+</button>
+    </div>
+             <button id="addToCartBtncupcake6" onclick="addToCart('Vanilla Cupcakes',80, 'cupcake6','/static/whitecupcakes.jpg','Vintage Bakery')" class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+
+   </div>
+
+
+  <div class="menu-category">
+        <h2 class="menu-title">Pastries</h2>
+
+        <!-- Desserts - Food Item 1 -->
+        <div class="menu-item">
+          <img src="/static/chocolate_cake_pic.jpg" alt="main1" class="food-image" style="width:350px; height:260px;">
+          <div class="food-details">
+            <h3>Chocolate Storm Cake</h3>
+            <p>Price:85/-</p>
+            <div class="rating">
+      <p>Rating: <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span></p>
+    </div>
+    <label for="cakepiece1">Quantity:</label>
+    <div class="quantity-selector">
+      <button class="quantity-btn" onclick="changeQuantity('-','cakepiece1')">-</button>
+      <input type="number" id="cakepiece1" value="1" min="1" max="6">
+      <button class="quantity-btn" onclick="changeQuantity('+','cakepiece1')">+</button>
+    </div>
+             <button id="addToCartBtncakepiece1" onclick="addToCart('Chocolate Storm Cake',85, 'cakepiece1','/static/chocolate_cake_pic.jpg','Vintage Bakery')" class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+
+      </div>
+      <!-- Left side for Desserts -->
+
+
+ <div class="menu-category">
+
+        <h2 class="menu-title">
+
+
+        &nbsp</h2>
+        <!-- Desserts - Food Item 2 -->
+        <div class="menu-item">
+          <img src="/static/vinalla_cake_piece.jpg" alt="main2" class="food-image" style="width:350px; height:260px;">
+          <div class="food-details">
+            <h3>Vanilla Cake</h3>
+            <p>Price:50/-</p>
+            <div class="rating">
+      <p>Rating: <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span></p>
+    </div>
+    <label for="cakepiece2">Quantity:</label>
+    <div class="quantity-selector">
+      <button class="quantity-btn" onclick="changeQuantity('-','cakepiece2')">-</button>
+      <input type="number" id="cakepiece2" value="1" min="1" max="6">
+      <button class="quantity-btn" onclick="changeQuantity('+','cakepiece2')">+</button>
+    </div>
+            <button id="addToCartBtncakepiece2" onclick="addToCart('Vanilla Cake',50, 'cakepiece2','/static/vinalla_cake_piece.jpg','Vintage Bakery')" class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+
+   </div>
+      <div class="menu-category">
+
+        <h2 class="menu-title">
+
+
+        &nbsp</h2>
+        <!-- Desserts - Food Item 2 -->
+        <div class="menu-item">
+          <img src="/static/whipped_cake.jpg" alt="main3" class="food-image" style="width:350px; height:260px;">
+          <div class="food-details">
+            <h3>Whipped Strawberry Cake</h3>
+            <p>Price: 130/-</p>
+            <div class="rating">
+      <p>Rating: <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span></p>
+    </div>
+    <label for="cakepiece3">Quantity:</label>
+    <div class="quantity-selector">
+      <button class="quantity-btn" onclick="changeQuantity('-','cakepiece3')">-</button>
+      <input type="number" id="cakepiece3" value="1" min="1" max="6">
+      <button class="quantity-btn" onclick="changeQuantity('+','cakepiece3')">+</button>
+    </div>
+            <button id="addToCartBtncakepiece3" onclick="addToCart('Whipped Strawberry Cake',130, 'cakepiece3','/static/whipped_cake.jpg','Vintage Bakery')" class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+
+   </div>
+      <div class="menu-category">
+
+        <h2 class="menu-title">
+
+
+        &nbsp</h2>
+        <!-- Desserts - Food Item 2 -->
+       <div class="menu-item">
+  <img src="/static/berry_cake_piece.jpg" alt="main4" class="food-image" style="width:350px; height:260px;">
+  <div class="food-details">
+    <h3> Fruit Blast cake</h3>
+    <p>Price:70/-</p>
+    <div class="rating">
+      <p>Rating: <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span></p>
+    </div>
+    <label for="cakepiece4">Quantity:</label>
+    <div class="quantity-selector">
+      <button class="quantity-btn" onclick="changeQuantity('-','cakepiece4')">-</button>
+      <input type="number" id="cakepiece4" value="1" min="1" max="6">
+      <button class="quantity-btn" onclick="changeQuantity('+','cakepiece4')">+</button>
+    </div>
+    <button id="addToCartBtncakepiece4" onclick="addToCart('Fruit Blast Cake', 70, 'cakepiece4','/static/berry_cake_piece.jpg','Vintage Bakery')" class="add-to-cart">Add to Cart</button>
+  </div>
+</div>
+
+   </div>
+
+  <div class="menu-category">
+        <h2 class="menu-title">Breads</h2>
+
+        <!-- Desserts - Food Item 1 -->
+        <div class="menu-item">
+          <img src="/static/milk_bread.jpg" alt="main1" class="food-image" style="width:250px; height:260px;">
+          <div class="food-details">
+            <h3>Milk Bread</h3>
+            <p>Price:90/-</p>
+            <div class="rating">
+      <p>Rating: <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span></p>
+    </div>
+    <label for="bread1">Quantity:</label>
+    <div class="quantity-selector">
+      <button class="quantity-btn" onclick="changeQuantity('-', 'bread1')">-</button>
+      <input type="number" id="bread1" value="1" min="1" max="6">
+      <button class="quantity-btn" onclick="changeQuantity('+','bread1')">+</button>
+    </div>
+            <button id="addToCartBtnbread1" onclick="addToCart('Milk Bread', 90, 'bread1','/static/milk_bread.jpg','Vintage Bakery')" class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+
+      </div>
+      <!-- Left side for Desserts -->
+
+
+ <div class="menu-category">
+
+        <h2 class="menu-title">
+
+
+        &nbsp</h2>
+        <!-- Desserts - Food Item 2 -->
+        <div class="menu-item">
+          <img src="/static/wheat_bread.jpg" alt="main2" class="food-image" style="width:250px; height:260px;">
+          <div class="food-details">
+            <h3>Wheat Bread</h3>
+            <p>Price:130/-</p>
+            <div class="rating">
+      <p>Rating: <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span></p>
+    </div>
+    <label for="bread2">Quantity:</label>
+    <div class="quantity-selector">
+      <button class="quantity-btn" onclick="changeQuantity('-', 'bread2')">-</button>
+      <input type="number" id="bread2" value="1" min="1" max="6">
+      <button class="quantity-btn" onclick="changeQuantity('+', 'bread2')">+</button>
+    </div>
+            <button id="addToCartBtnbread2" onclick="addToCart('Wheat Bread', 130, 'bread2','/static/wheat_bread.jpg','Vintage Bakery')" class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+
+   </div>
+      <div class="menu-category">
+
+        <h2 class="menu-title">
+
+
+        &nbsp</h2>
+        <!-- Desserts - Food Item 2 -->
+        <div class="menu-item">
+          <img src="/static/cream_buns.jpg" alt="main3" class="food-image" style="width:400px; height:260px;">
+          <div class="food-details">
+            <h3>Cream Buns</h3>
+            <p>Price:80/-</p>
+            <div class="rating">
+      <p>Rating: <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span></p>
+    </div>
+    <label for="bread3">Quantity:</label>
+    <div class="quantity-selector">
+      <button class="quantity-btn" onclick="changeQuantity('-', 'bread3')">-</button>
+      <input type="number" id="bread3" value="1" min="1" max="6">
+      <button class="quantity-btn" onclick="changeQuantity('+', 'bread3')">+</button>
+    </div>
+
+    <button id="addToCartBtnbread3" onclick="addToCart('Cream Buns', 80, 'bread3','/static/cream_buns.jpg','Vintage Bakery')" class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+
+   </div>
+      <div class="menu-category">
+
+        <h2 class="menu-title">
+
+
+        &nbsp</h2>
+        <!-- Desserts - Food Item 2 -->
+       <div class="menu-item">
+  <img src="/static/burger_buns.jpg" alt="main4" class="food-image" style="width:250px; height:260px;">
+  <div class="food-details">
+    <h3>Burger Patty</h3>
+    <p>Price: 130/-</p>
+    <div class="rating">
+      <p>Rating: <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span></p>
+    </div>
+    <label for="bread4">Quantity:</label>
+    <div class="quantity-selector">
+      <button class="quantity-btn" onclick="changeQuantity('-', 'bread4')">-</button>
+      <input type="number" id="bread4" value="1" min="1" max="6">
+      <button class="quantity-btn" onclick="changeQuantity('+', 'bread4')">+</button>
+    </div>
+    <button id="addToCartBtnbread4" onclick="addToCart('Burger Patty', 130, 'bread4','/static/burger_buns.jpg','Vintage Bakery')" class="add-to-cart">Add to Cart</button>
+  </div>
+</div>
+      </div>
+           <div class="menu-category">
+
+        <h2 class="menu-title">
+
+
+        &nbsp</h2>
+        <!-- Desserts - Food Item 2 -->
+        <div class="menu-item">
+          <img src="/static/mini_bites.jpg" alt="main3" class="food-image" style="width:250px; height:260px;">
+          <div class="food-details">
+            <h3>Mini Treats</h3>
+            <p>Price:80/-</p>
+            <div class="rating">
+      <p>Rating: <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span></p>
+    </div>
+    <label for="bread5">Quantity:</label>
+    <div class="quantity-selector">
+      <button class="quantity-btn" onclick="changeQuantity('-', 'bread5')">-</button>
+      <input type="number" id="bread5" value="1" min="1" max="6">
+      <button class="quantity-btn" onclick="changeQuantity('+', 'bread5')">+</button>
+    </div>
+
+    <button id="addToCartBtnbread5" onclick="addToCart('Mini Treats', 80, 'bread5','/static/mini_bites.jpg','Vintage Bakery')" class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+
+   </div>
+      <div class="menu-category">
+
+        <h2 class="menu-title">
+
+
+        &nbsp</h2>
+        <!-- Desserts - Food Item 2 -->
+       <div class="menu-item">
+  <img src="/static/assorted_buns.jpg" alt="main4" class="food-image" style="width:370px; height:260px;">
+  <div class="food-details">
+    <h3>Assorted Buns</h3>
+    <p>Price: 130/-</p>
+    <div class="rating">
+      <p>Rating: <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span></p>
+    </div>
+    <label for="bread6">Quantity:</label>
+    <div class="quantity-selector">
+      <button class="quantity-btn" onclick="changeQuantity('-', 'bread6')">-</button>
+      <input type="number" id="bread6" value="1" min="1" max="6">
+      <button class="quantity-btn" onclick="changeQuantity('+', 'bread6')">+</button>
+    </div>
+    <button id="addToCartBtnbread6" onclick="addToCart('Assorted Buns', 130, 'bread6','/static/assorted_buns.jpg','Vintage Bakery')" class="add-to-cart">Add to Cart</button>
+  </div>
+</div>
+
+
+  </div>
+        <div class="menu-category">
+        <h2 class="menu-title">Cakes</h2>
+
+        <!-- Desserts - Food Item 1 -->
+        <div class="menu-item">
+          <img src="/static/cake.jpg" alt="main1" class="food-image" style="width:230px; height:260px;">
+          <div class="food-details">
+            <h3>Chocolate Caramel Cake</h3>
+            <p>Price:580/-</p>
+            <div class="rating">
+      <p>Rating: <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span></p>
+    </div>
+    <label for="cake1">Quantity:</label>
+    <div class="quantity-selector">
+      <button class="quantity-btn" onclick="changeQuantity('-', 'cake1')">-</button>
+      <input type="number" id="cake1" value="1" min="1" max="6">
+      <button class="quantity-btn" onclick="changeQuantity('+','cake1')">+</button>
+    </div>
+            <button id="addToCartBtncake1" onclick="addToCart('Chocolate Caramel Cake', 580, 'cake1','/static/cake.jpg','Vintage Bakery')" class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+
+      </div>
+      <!-- Left side for Desserts -->
+
+
+ <div class="menu-category">
+
+
+        <h2 class="menu-title">
+
+
+          &nbsp</h2>
+        <!-- Desserts - Food Item 2 -->
+        <div class="menu-item">
+          <img src="/static/chocolate_cake.jpg" alt="main2" class="food-image" style="width:230px; height:260px;">
+          <div class="food-details">
+            <h3>Black Forest Cake</h3>
+            <p>Price:630/-</p>
+            <div class="rating">
+      <p>Rating: <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span></p>
+    </div>
+    <label for="cake2">Quantity:</label>
+    <div class="quantity-selector">
+      <button class="quantity-btn" onclick="changeQuantity('-', 'cake2')">-</button>
+      <input type="number" id="cake2" value="1" min="1" max="6">
+      <button class="quantity-btn" onclick="changeQuantity('+', 'cake2')">+</button>
+    </div>
+            <button id="addToCartBtncake2" onclick="addToCart('Black Forest Cake', 630, 'cake2','/static/chocolate_cake.jpg','Vintage Bakery')" class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+
+   </div>
+      <div class="menu-category">
+  &nbsp
+        <h2 class="menu-title">
+</h2>
+        <!-- Desserts - Food Item 2 -->
+        <div class="menu-item">
+          <img src="/static/lavender_cake.jpg" alt="main3" class="food-image" style="width:330px; height:260px;">
+          <div class="food-details">
+            <h3>Lavender Themed Cake</h3>
+            <p>Price:480/-</p>
+            <div class="rating">
+      <p>Rating: <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span></p>
+    </div>
+    <label for="cake3">Quantity:</label>
+    <div class="quantity-selector">
+      <button class="quantity-btn" onclick="changeQuantity('-', 'cake3')">-</button>
+      <input type="number" id="cake3" value="1" min="1" max="6">
+      <button class="quantity-btn" onclick="changeQuantity('+', 'cake3')">+</button>
+    </div>
+
+    <button id="addToCartBtncake3" onclick="addToCart('Lavender Themed Cake', 480, 'cake3','/static/lavender_cake.jpg','Vintage Bakery')" class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+
+   </div>
+      <div class="menu-category">
+            &nbsp
+
+        <h2 class="menu-title">
+</h2>
+        <!-- Desserts - Food Item 2 -->
+       <div class="menu-item">
+  <img src="/static/velvet_cake.jpg" alt="main4" class="food-image" style="width:230px; height:260px;" >
+  <div class="food-details">
+    <h3>Red Velvet Cake</h3>
+    <p>Price: 530/-</p>
+    <div class="rating">
+      <p>Rating: <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span></p>
+    </div>
+    <label for="cake4">Quantity:</label>
+    <div class="quantity-selector">
+      <button class="quantity-btn" onclick="changeQuantity('-', 'cake4')">-</button>
+      <input type="number" id="cake4" value="1" min="1" max="6">
+      <button class="quantity-btn" onclick="changeQuantity('+', 'cake4')">+</button>
+    </div>
+    <button id="addToCartBtncake4" onclick="addToCart('Red Velvet Cake', 530, 'cake4','/static/velvet_cake.jpg','Vintage Bakery')" class="add-to-cart">Add to Cart</button>
+  </div>
+           </div>
+          </div>
+ <div class="menu-category">
+  &nbsp
+        <h2 class="menu-title">
+</h2>
+        <!-- Desserts - Food Item 2 -->
+        <div class="menu-item">
+          <img src="/static/fruit_cake.jpg" alt="main3" class="food-image" style="width:250px; height:260px;">
+          <div class="food-details">
+            <h3>Chocolate Fruit Cake</h3>
+            <p>Price:360/-</p>
+            <div class="rating">
+      <p>Rating: <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span></p>
+    </div>
+    <label for="cake5">Quantity:</label>
+    <div class="quantity-selector">
+      <button class="quantity-btn" onclick="changeQuantity('-', 'cake5')">-</button>
+      <input type="number" id="cake5" value="1" min="1" max="6">
+      <button class="quantity-btn" onclick="changeQuantity('+', 'cake5')">+</button>
+    </div>
+
+    <button id="addToCartBtncake5" onclick="addToCart('Chocolate Fruit Cake', 360, 'cake5','/static/fruit_cake.jpg','Vintage Bakery')" class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+
+   </div>
+      <div class="menu-category">
+          &nbsp
+
+        <h2 class="menu-title">
+</h2>
+        <!-- Desserts - Food Item 2 -->
+       <div class="menu-item">
+  <img src="/static/fruitcake.jpg" alt="main4" class="food-image"  style="width:330px; height:260px;">
+  <div class="food-details">
+    <h3>Whipped Pineapple Cake</h3>
+    <p>Price: 580/-</p>
+    <div class="rating">
+      <p>Rating: <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span></p>
+    </div>
+    <label for="cake6">Quantity:</label>
+    <div class="quantity-selector">
+      <button class="quantity-btn" onclick="changeQuantity('-', 'cake6')">-</button>
+      <input type="number" id="cake6" value="1" min="1" max="6">
+      <button class="quantity-btn" onclick="changeQuantity('+', 'cake6')">+</button>
+    </div>
+    <button id="addToCartBtncake6" onclick="addToCart('Whipped Pineapple Cake', 580, 'cake6','/static/fruitcake.jpg','Vintage Bakery')" class="add-to-cart">Add to Cart</button>
+  </div>
+</div>
+     </div>
+
+    </div>
+      </div>
+
+
+
+
+ 
+  <script >
+      function changeQuantity(operation, inputId) {
+  var quantityInput = document.getElementById(inputId);
+  var currentQuantity = parseInt(quantityInput.value);
+
+  if (operation === '-' && currentQuantity > 1) {
+    quantityInput.value = currentQuantity - 1;
+  } else if (operation === '+' && currentQuantity < 6) {
+    quantityInput.value = currentQuantity + 1;
+  }
+}
+
+</script>
+
+<script>
+   function addToCart(name, price, quantityId, image, restaurant) {
+    var quantityInput = document.getElementById(quantityId);
+    var quantity = parseInt(quantityInput.value);
+
+    // Create an object representing the item
+    var item = {
+        name: name,
+        price: price,
+        quantity: quantity,
+        image: image,
+        restaurant: restaurant  // Add the restaurant property
+    };
+
+    // Retrieve existing cart or create a new one
+    var cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Check if the item is already in the cart
+    var existingItem = cart.find(i => i.name === name && i.restaurant === restaurant);
+    if (existingItem) {
+        // Update quantity if the item is already in the cart
+        existingItem.quantity += quantity;
+    } else {
+        // Add the item to the cart if it's not already there
+        cart.push(item);
+    }
+
+    // Save the updated cart to localStorage
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    // Update quantity in the restaurant page
+    updateQuantityInRestaurantPage(name, quantity);
+
+    // Change the button text to "Go to Cart" and style it
+    var addToCartBtn = document.getElementById(`addToCartBtn${quantityId}`);
+    if (addToCartBtn) {
+        addToCartBtn.innerText = 'Go to Cart';
+        addToCartBtn.style.backgroundColor = 'black';
+        addToCartBtn.style.color = 'white';
+
+        // Change the onclick action to redirect to the cart page
+        addToCartBtn.onclick = function() {
+            // Redirect to the cart page
+            window.location.href = 'cart/';
+            console.log('Redirecting to the cart page...');
+        };
+
+        // Optionally, provide feedback to the user that the item was added to the cart
+        alert(`${quantity} ${name}(s) from ${restaurant} added to the cart!`);
+    } else {
+        console.error('Button not found:', `addToCartBtn${quantityId}`);
+    }
+}
+
+
+// Function to update quantity in restaurant page
+// Function to update quantity in the restaurant page
+function updateQuantityInRestaurantPage(name, oldQuantity, newQuantity) {
+    // Implement the logic to update quantity in the restaurant page
+    var quantityInput = document.getElementById(`quantityInput_${name}`);
+    if (quantityInput) {
+        var currentQuantity = parseInt(quantityInput.value);
+        if (currentQuantity === oldQuantity) {
+            quantityInput.value = newQuantity;
+        }
+    }
+}
+
+</script>
+</body>
+</html>

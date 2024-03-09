@@ -1,0 +1,693 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      background-color: #f0f0f0; /* Set background color here */
+    }
+
+    #left-container {
+    width: 25%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: white;
+    height: 100vh; /* 100% of the viewport height */
+}
+
+.video-background {
+    max-width: 100%; /* Set maximum width to 100% of its container */
+    max-height: 100%; /* Set maximum height to 100% of its container */
+    width: auto;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+    #right-container {
+      width: 75%;
+      min-height: 100vh;
+      background-color: #f0f0f0;
+      padding: 20px;
+      box-sizing:border-box;
+    }
+
+    #restaurant-image {
+      width: 100%;
+      height: 70%;
+    }
+
+    .restaurant-info {
+      margin-top: 20px;
+    }
+
+    .stars {
+      color: #FFD700; /* Gold color for stars */
+    }
+
+    .menu-container {
+      background-color: #fff;
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .menu-title {
+      font-family: 'Style Script', cursive;
+      font-size: 30px;
+      margin-bottom: 10px;
+      width: 100%;
+      text-align: right;
+    }
+
+    .menu-category {
+      width: 50%; /* Two categories per row */
+      box-sizing: border-box;
+      padding: 0 10px;
+      margin-bottom: 20px;
+    }
+
+    .menu-item {
+      display: flex;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      margin:10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: calc(90% - 10px); /* Adjusted width for menu item containers */
+    }
+
+    .food-image {
+      width: 80%;
+      height: 260px;
+      object-fit: cover;
+    }
+
+    .food-details {
+      padding: 10px;
+      width: 60%;
+    }
+
+    .rating {
+      margin-bottom: 10px;
+    }
+
+    .add-to-cart {
+      background-color: #4caf50;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="left-container" >
+     <video class="video-background" autoplay loop muted>
+       <source src="/static/juice.mp4" type="video/mp4">
+    </video>
+
+    <div class="restaurant-info">
+      <h1>Pure Juice Co.</h1>
+      <p>Hotel Location: smart street, fallow nagar, Rajasthan , India</p>
+      <p>Opening Hours: 8:00 AM - 9:00 PM (weekdays) and 10:00 AM - 3:00 PM(weekends)</p>
+      <!-- Add other restaurant information as needed -->
+    </div>
+  </div>
+
+  <div id="right-container">
+    <div class="menu-container">
+      <div class="menu-category">
+        <h2 class="menu-title">Refreshers</h2>
+        <div class="menu-item">
+          <img src="/static/rasberry_refresher.jpg" alt="starter1" class="food-image" style="width:250px; height:260px;">
+
+          <div class="food-details">
+            <h3>Rasberry Refresher</h3>
+            <p>Price: 140/-</p>
+            <div class="rating">
+      <p>Rating: <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span></p>
+    </div>
+    <label for="refresher1">Quantity:</label>
+    <div class="quantity-selector">
+      <button class="quantity-btn" onclick="changeQuantity('-','refresher1')">-</button>
+      <input type="number" id="refresher1" value="1" min="1" max="6">
+      <button class="quantity-btn" onclick="changeQuantity('+','refresher1')">+</button>
+    </div>
+           <button id="addToCartBtnrefresher1" onclick="addToCart('Rasberry Refresher',140, 'refresher1','/static/rasberry_refresher.jpg','Pure Juice Co.')" class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+
+      </div>
+      <!-- Left side for Desserts -->
+
+
+ <div class="menu-category">
+
+        <h2 class="menu-title">
+
+
+        &nbsp</h2>
+        <!-- Desserts - Food Item 2 -->
+        <div class="menu-item">
+          <img src="/static/mango_refresher.jpg" alt="starter3" class="food-image" style="width:250px; height:260px;">
+          <div class="food-details">
+            <h3>Mango Refresher</h3>
+            <p>Price: 110/-</p>
+            <div class="rating">
+      <p>Rating: <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span></p>
+    </div>
+    <label for="refresher2">Quantity:</label>
+    <div class="quantity-selector">
+      <button class="quantity-btn" onclick="changeQuantity('-','refresher2')">-</button>
+      <input type="number" id="refresher2" value="1" min="1" max="6">
+      <button class="quantity-btn" onclick="changeQuantity('+','refresher2')">+</button>
+    </div>
+             <button id="addToCartBtnrefresher2" onclick="addToCart('Mango refresher',110, 'refresher2','/static/mango_refresher.jpg','Pure Juice Co.')" class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+
+   </div>
+        <div class="menu-category">
+
+        <h2 class="menu-title">
+
+
+        &nbsp</h2>
+        <!-- Desserts - Food Item 2 -->
+        <div class="menu-item">
+          <img src="/static/mint_refresher.jpg" alt="starter3" class="food-image" style="width:190px; height:260px;">
+          <div class="food-details">
+            <h3>Mint refresher</h3>
+            <p>Price: 70/-</p>
+            <div class="rating">
+      <p>Rating: <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span></p>
+    </div>
+    <label for="refresher4">Quantity:</label>
+    <div class="quantity-selector">
+      <button class="quantity-btn" onclick="changeQuantity('-','refresher4')">-</button>
+      <input type="number" id="refresher4" value="1" min="1" max="6">
+      <button class="quantity-btn" onclick="changeQuantity('+','refresher4')">+</button>
+    </div>
+             <button id="addToCartBtnrefresher4" onclick="addToCart('Mint refresher',70, 'refresher4','/static/mint_refresher.jpg','Pure Juice Co.')" class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+
+   </div>
+        <div class="menu-category">
+
+        <h2 class="menu-title">
+
+
+        &nbsp</h2>
+        <!-- Desserts - Food Item 2 -->
+        <div class="menu-item">
+          <img src="/static/watermelon_refresher.jpg" alt="starter3" class="food-image" style="width:390px; height:260px;">
+          <div class="food-details">
+            <h3>Watermelon Refresher</h3>
+            <p>Price: 90/-</p>
+            <div class="rating">
+      <p>Rating: <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span></p>
+    </div>
+    <label for="refresher3">Quantity:</label>
+    <div class="quantity-selector">
+      <button class="quantity-btn" onclick="changeQuantity('-','refresher3')">-</button>
+      <input type="number" id="refresher3" value="1" min="1" max="6">
+      <button class="quantity-btn" onclick="changeQuantity('+','refresher3')">+</button>
+    </div>
+             <button id="addToCartBtnrefresher3" onclick="addToCart('Watermelon Refresher',90, 'refresher3','/static/watermelon_refresher.jpg','Pure Juice Co.')" class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+
+   </div>
+
+
+      <div class="menu-category">
+        <h2 class="menu-title">Smoothie Bowls</h2>
+
+        <!-- Desserts - Food Item 1 -->
+        <div class="menu-item">
+          <img src="/static/rasberry_bowl.jpg" alt="main1" class="food-image" style="width:250px; height:260px;">
+          <div class="food-details">
+            <h3>Rasberry Smoothie Bowl</h3>
+            <p>Price:160/-</p>
+            <div class="rating">
+      <p>Rating: <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span></p>
+    </div>
+    <label for="smoothie1">Quantity:</label>
+    <div class="quantity-selector">
+      <button class="quantity-btn" onclick="changeQuantity('-','smoothie1')">-</button>
+      <input type="number" id="smoothie1" value="1" min="1" max="6">
+      <button class="quantity-btn" onclick="changeQuantity('+','smoothie1')">+</button>
+    </div>
+             <button id="addToCartBtnsmoothie1" onclick="addToCart('Rasberry Smoothie Bowl',160, 'smoothie1','/static/rasberry_bowl.jpg','Pure Juice Co.')" class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+
+      </div>
+      <!-- Left side for Desserts -->
+
+
+ <div class="menu-category">
+
+        <h2 class="menu-title">
+
+
+        &nbsp</h2>
+        <!-- Desserts - Food Item 2 -->
+        <div class="menu-item">
+          <img src="/static/mint_smoothie.jpg" alt="main2" class="food-image" style="width:250px; height:260px;">
+          <div class="food-details">
+            <h3>Kiwi Smoothie Bowl</h3>
+            <p>Price:130/-</p>
+            <div class="rating">
+      <p>Rating: <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span></p>
+    </div>
+    <label for="smoothie2">Quantity:</label>
+    <div class="quantity-selector">
+      <button class="quantity-btn" onclick="changeQuantity('-','smoothie2')">-</button>
+      <input type="number" id="smoothie2" value="1" min="1" max="6">
+      <button class="quantity-btn" onclick="changeQuantity('+','smoothie2')">+</button>
+    </div>
+            <button id="addToCartBtnsmoothie2" onclick="addToCart('Kiwi Smoothie Bowl',130, 'smoothie2','/static/mint_smoothie.jpg','Pure Juice Co.')" class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+
+   </div>
+      <div class="menu-category">
+
+        <h2 class="menu-title">
+
+
+        &nbsp</h2>
+        <!-- Desserts - Food Item 2 -->
+        <div class="menu-item">
+          <img src="/static/strawberry_smoothie.jpg" alt="main3" class="food-image" style="width:250px; height:260px;">
+          <div class="food-details">
+            <h3>Strawberry Chia Smoothie</h3>
+            <p>Price: 170/-</p>
+            <div class="rating">
+      <p>Rating: <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span></p>
+    </div>
+    <label for="smoothie3">Quantity:</label>
+    <div class="quantity-selector">
+      <button class="quantity-btn" onclick="changeQuantity('-','smoothie3')">-</button>
+      <input type="number" id="smoothie3" value="1" min="1" max="6">
+      <button class="quantity-btn" onclick="changeQuantity('+','smoothie3')">+</button>
+    </div>
+            <button id="addToCartBtnsmoothie3" onclick="addToCart('Strawberry Chia Smoothie',170, 'smoothie3','/static/strawberry_smoothie.jpg','Pure Juice Co.')" class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+
+   </div>
+      <div class="menu-category">
+
+        <h2 class="menu-title">
+
+
+        &nbsp</h2>
+        <!-- Desserts - Food Item 2 -->
+       <div class="menu-item">
+  <img src="/static/dates_smoothie.jpg" alt="main4" class="food-image" style="width:250px;height:250px">
+  <div class="food-details">
+    <h3>Banana Dates Smoothie </h3>
+    <p>Price:200/-</p>
+    <div class="rating">
+      <p>Rating: <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span></p>
+    </div>
+    <label for="smoothie4">Quantity:</label>
+    <div class="quantity-selector">
+      <button class="quantity-btn" onclick="changeQuantity('-','smoothie4')">-</button>
+      <input type="number" id="smoothie4" value="1" min="1" max="6">
+      <button class="quantity-btn" onclick="changeQuantity('+','smoothie4')">+</button>
+    </div>
+    <button id="addToCartBtnsmoothie4" onclick="addToCart('Banana Dates Smoothie', 200, 'smoothie4','/static/dates_smoothie.jpg','Pure Juice Co.')" class="add-to-cart">Add to Cart</button>
+  </div>
+</div>
+
+   </div>
+
+
+      <div class="menu-category">
+        <h2 class="menu-title">Mocktails</h2>
+
+        <!-- Desserts - Food Item 1 -->
+        <div class="menu-item">
+          <img src="/static/grape_moji.jpg" alt="main1" class="food-image">
+          <div class="food-details">
+            <h3>Mosambi Mocktail</h3>
+            <p>Price:190/-</p>
+            <div class="rating">
+      <p>Rating: <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span></p>
+    </div>
+    <label for="moji1">Quantity:</label>
+    <div class="quantity-selector">
+      <button class="quantity-btn" onclick="changeQuantity('-', 'moji1')">-</button>
+      <input type="number" id="moji1" value="1" min="1" max="6">
+      <button class="quantity-btn" onclick="changeQuantity('+','moji1')">+</button>
+    </div>
+            <button id="addToCartBtnmoji1" onclick="addToCart('Mosambi Mocktail', 190, 'moji1','/static/grape_moji.jpg','Pure Juice Co.')" class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+
+      </div>
+      <!-- Left side for Desserts -->
+
+
+ <div class="menu-category">
+
+        <h2 class="menu-title">
+
+
+        &nbsp</h2>
+        <!-- Desserts - Food Item 2 -->
+        <div class="menu-item">
+          <img src="/static/lemon_moji.jpg" alt="main2" class="food-image">
+          <div class="food-details">
+            <h3>Lemon Basil Spritzer</h3>
+            <p>Price:130/-</p>
+            <div class="rating">
+      <p>Rating: <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span></p>
+    </div>
+    <label for="moji2">Quantity:</label>
+    <div class="quantity-selector">
+      <button class="quantity-btn" onclick="changeQuantity('-', 'moji2')">-</button>
+      <input type="number" id="moji2" value="1" min="1" max="6">
+      <button class="quantity-btn" onclick="changeQuantity('+', 'moji2')">+</button>
+    </div>
+            <button id="addToCartBtnmoji2" onclick="addToCart('Lemon Basil Spritzer', 130, 'moji2','/static/lemon_moji.jpg','Pure Juice Co.')" class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+
+   </div>
+      <div class="menu-category">
+
+        <h2 class="menu-title">
+
+
+        &nbsp</h2>
+        <!-- Desserts - Food Item 2 -->
+        <div class="menu-item">
+          <img src="/static/sunrise_moji.jpg" alt="main3" class="food-image">
+          <div class="food-details">
+            <h3> Sunshine Sip</h3>
+            <p>Price:150/-</p>
+            <div class="rating">
+      <p>Rating: <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span></p>
+    </div>
+    <label for="moji3">Quantity:</label>
+    <div class="quantity-selector">
+      <button class="quantity-btn" onclick="changeQuantity('-', 'moji3')">-</button>
+      <input type="number" id="moji3" value="1" min="1" max="6">
+      <button class="quantity-btn" onclick="changeQuantity('+', 'moji3')">+</button>
+    </div>
+
+    <button id="addToCartBtnmoji3" onclick="addToCart('Sunshine Sip', 150, 'moji3','/static/sunrise_moji.jpg','Pure Juice Co.')" class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+
+   </div>
+      <div class="menu-category">
+
+        <h2 class="menu-title">
+
+
+        &nbsp</h2>
+        <!-- Desserts - Food Item 2 -->
+       <div class="menu-item">
+  <img src="/static/berry_moji.jpg" alt="main4" class="food-image" style="width:300px; height:260px;" >
+  <div class="food-details">
+    <h3>Ocean Bliss</h3>
+    <p>Price: 130/-</p>
+    <div class="rating">
+      <p>Rating: <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span></p>
+    </div>
+    <label for="moji4">Quantity:</label>
+    <div class="quantity-selector">
+      <button class="quantity-btn" onclick="changeQuantity('-', 'moji4')">-</button>
+      <input type="number" id="moji4" value="1" min="1" max="6">
+      <button class="quantity-btn" onclick="changeQuantity('+', 'moji4')">+</button>
+    </div>
+    <button id="addToCartBtnmoji4" onclick="addToCart('Ocean Bliss', 130, 'moji4','/static/berry_moji.jpg','Pure Juice Co.')" class="add-to-cart">Add to Cart</button>
+  </div>
+</div>
+
+
+   </div>
+        <div class="menu-category">
+        <h2 class="menu-title">Desserts</h2>
+
+        <!-- Desserts - Food Item 1 -->
+        <div class="menu-item">
+          <img src="/static/strawberry_delight.jpg" alt="main1" class="food-image" style="width:60%">
+          <div class="food-details">
+            <h3>Strawberry Delight</h3>
+            <p>Price:90/-</p>
+            <div class="rating">
+      <p>Rating: <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span></p>
+    </div>
+    <label for="dessert1">Quantity:</label>
+    <div class="quantity-selector">
+      <button class="quantity-btn" onclick="changeQuantity('-', 'dessert1')">-</button>
+      <input type="number" id="dessert1" value="1" min="1" max="6">
+      <button class="quantity-btn" onclick="changeQuantity('+','dessert1')">+</button>
+    </div>
+            <button id="addToCartBtndessert1" onclick="addToCart('strawberry_delight', 90, 'dessert1','/static/strawberry_delight.jpg','Pure Juice Co.')" class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+
+      </div>
+      <!-- Left side for Desserts -->
+
+
+
+      <div class="menu-category">
+
+        <h2 class="menu-title">
+
+
+        &nbsp</h2>
+        <!-- Desserts - Food Item 2 -->
+          <div class="menu-item">
+          <img src="/static/butterscotch_macron.jpg" alt="main4" class="food-image" style="width:250px; height:260px;" >
+      <div class="food-details">
+    <h3>Butterscotch Macron</h3>
+    <p>Price: 100/-</p>
+    <div class="rating">
+      <p>Rating: <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span></p>
+    </div>
+    <label for="dessert4">Quantity:</label>
+    <div class="quantity-selector">
+      <button class="quantity-btn" onclick="changeQuantity('-', 'dessert4')">-</button>
+      <input type="number" id="dessert4" value="1" min="1" max="6">
+      <button class="quantity-btn" onclick="changeQuantity('+', 'dessert4')">+</button>
+    </div>
+    <button id="addToCartBtndessert4" onclick="addToCart('Butterscotch Macron', 100, 'dessert4','/static/butterscotch_macron.jpg','Pure Juice Co.')" class="add-to-cart">Add to Cart</button>
+  </div>
+
+
+    </div>
+
+</div>
+        <div class="menu-category">
+        <h2 class="menu-title">Snacks</h2>
+
+        <!-- Desserts - Food Item 1 -->
+        <div class="menu-item">
+          <img src="/static/spagatti2.jpg" alt="main1" class="food-image">
+          <div class="food-details">
+            <h3>Meatball Spaghetti</h3>
+            <p>Price:160/-</p>
+            <div class="rating">
+      <p>Rating: <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span></p>
+    </div>
+    <label for="snack1">Quantity:</label>
+    <div class="quantity-selector">
+      <button class="quantity-btn" onclick="changeQuantity('-', 'snack1')">-</button>
+      <input type="number" id="snack1" value="1" min="1" max="6">
+      <button class="quantity-btn" onclick="changeQuantity('+','snack1')">+</button>
+    </div>
+            <button id="addToCartBtnsnack1" onclick="addToCart('Meatball Spaghetti', 160, 'snack1','/static/spagatti2.jpg','Pure Juice Co.')" class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+
+      </div>
+      <!-- Left side for Desserts -->
+
+
+ <div class="menu-category">
+
+        <h2 class="menu-title">
+
+
+        &nbsp</h2>
+        <!-- Desserts - Food Item 2 -->
+        <div class="menu-item">
+          <img src="/static/samosa.jpg" alt="main2" class="food-image" style="width:250px; height:250px;">
+          <div class="food-details">
+            <h3>Samosa</h3>
+            <p>Price:100/-</p>
+            <div class="rating">
+      <p>Rating: <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span></p>
+    </div>
+    <label for="snack2">Quantity:</label>
+    <div class="quantity-selector">
+      <button class="quantity-btn" onclick="changeQuantity('-', 'snack2')">-</button>
+      <input type="number" id="snack2" value="1" min="1" max="6">
+      <button class="quantity-btn" onclick="changeQuantity('+', 'snack2')">+</button>
+    </div>
+            <button id="addToCartBtnsnack2" onclick="addToCart('Samosa', 100, 'snack2','/static/samosa.jpg','Pure Juice Co.')" class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+
+   </div>
+      <div class="menu-category">
+
+        <h2 class="menu-title">
+
+
+        &nbsp</h2>
+        <!-- Desserts - Food Item 2 -->
+        <div class="menu-item">
+          <img src="/static/shrimpricebowl.jpg" alt="main3" class="food-image" style="width:250px; height:250px;">
+          <div class="food-details">
+            <h3>Shrimp Rice Bowl</h3>
+            <p>Price:200/-</p>
+            <div class="rating">
+      <p>Rating: <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span></p>
+    </div>
+    <label for="snack3">Quantity:</label>
+    <div class="quantity-selector">
+      <button class="quantity-btn" onclick="changeQuantity('-', 'snack3')">-</button>
+      <input type="number" id="snack3" value="1" min="1" max="6">
+      <button class="quantity-btn" onclick="changeQuantity('+', 'snack3')">+</button>
+    </div>
+
+    <button id="addToCartBtnsnack3" onclick="addToCart('Shrimp Rice Bowl', 200, 'snack3','/static/shrimpricebowl.jpg','Pure Juice Co.')" class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+
+   </div>
+      <div class="menu-category">
+
+        <h2 class="menu-title">
+
+
+        &nbsp</h2>
+
+       <div class="menu-item">
+  <img src="/static/fries.jpg" alt="main4" class="food-image" style="width:300px; height:250px;" >
+  <div class="food-details">
+    <h3>French Fries</h3>
+    <p>Price: 100/-</p>
+    <div class="rating">
+      <p>Rating: <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span></p>
+    </div>
+    <label for="snack4">Quantity:</label>
+    <div class="quantity-selector">
+      <button class="quantity-btn" onclick="changeQuantity('-', 'snack4')">-</button>
+      <input type="number" id="snack4" value="1" min="1" max="6">
+      <button class="quantity-btn" onclick="changeQuantity('+', 'snack4')">+</button>
+    </div>
+    <button id="addToCartBtnsnack4" onclick="addToCart('French Fries', 100, 'snack4','/static/fries.jpg','Pure Juice Co.')" class="add-to-cart">Add to Cart</button>
+  </div>
+</div>
+
+
+   </div>
+    </div>
+  </div>
+  <script >
+      function changeQuantity(operation, inputId) {
+  var quantityInput = document.getElementById(inputId);
+  var currentQuantity = parseInt(quantityInput.value);
+
+  if (operation === '-' && currentQuantity > 1) {
+    quantityInput.value = currentQuantity - 1;
+  } else if (operation === '+' && currentQuantity < 6) {
+    quantityInput.value = currentQuantity + 1;
+  }
+}
+
+</script>
+
+<script>
+   function addToCart(name, price, quantityId, image, restaurant) {
+    var quantityInput = document.getElementById(quantityId);
+    var quantity = parseInt(quantityInput.value);
+
+    // Create an object representing the item
+    var item = {
+        name: name,
+        price: price,
+        quantity: quantity,
+        image: image,
+        restaurant: restaurant  // Add the restaurant property
+    };
+
+    // Retrieve existing cart or create a new one
+    var cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Check if the item is already in the cart
+    var existingItem = cart.find(i => i.name === name && i.restaurant === restaurant);
+    if (existingItem) {
+        // Update quantity if the item is already in the cart
+        existingItem.quantity += quantity;
+    } else {
+        // Add the item to the cart if it's not already there
+        cart.push(item);
+    }
+
+    // Save the updated cart to localStorage
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    // Update quantity in the restaurant page
+    updateQuantityInRestaurantPage(name, quantity);
+
+    // Change the button text to "Go to Cart" and style it
+    var addToCartBtn = document.getElementById(`addToCartBtn${quantityId}`);
+    if (addToCartBtn) {
+        addToCartBtn.innerText = 'Go to Cart';
+        addToCartBtn.style.backgroundColor = 'black';
+        addToCartBtn.style.color = 'white';
+
+        // Change the onclick action to redirect to the cart page
+        addToCartBtn.onclick = function() {
+            // Redirect to the cart page
+            window.location.href = 'cart/';
+            console.log('Redirecting to the cart page...');
+        };
+
+        // Optionally, provide feedback to the user that the item was added to the cart
+        alert(`${quantity} ${name}(s) from ${restaurant} added to the cart!`);
+    } else {
+        console.error('Button not found:', `addToCartBtn${quantityId}`);
+    }
+}
+
+
+// Function to update quantity in restaurant page
+// Function to update quantity in the restaurant page
+function updateQuantityInRestaurantPage(name, oldQuantity, newQuantity) {
+    // Implement the logic to update quantity in the restaurant page
+    var quantityInput = document.getElementById(`quantityInput_${name}`);
+    if (quantityInput) {
+        var currentQuantity = parseInt(quantityInput.value);
+        if (currentQuantity === oldQuantity) {
+            quantityInput.value = newQuantity;
+        }
+    }
+}
+
+</script>
+</body>
+</html>
